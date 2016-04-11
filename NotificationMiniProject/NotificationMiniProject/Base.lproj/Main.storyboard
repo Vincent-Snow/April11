@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LEN-vc-2lp">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Reciever-->
+        <scene sceneID="m8x-3t-Up5">
+            <objects>
+                <viewController id="HGT-UN-rTj" customClass="ReceiverViewController" customModule="NotificationMiniProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Isn-Ah-7Sj"/>
+                        <viewControllerLayoutGuide type="bottom" id="hpG-ch-rjv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aA0-5W-lgT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05R-w0-hdO">
+                                <rect key="frame" x="139" y="273" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="05R-w0-hdO" firstAttribute="centerX" secondItem="aA0-5W-lgT" secondAttribute="centerX" id="6Ni-bz-Ywq"/>
+                            <constraint firstItem="05R-w0-hdO" firstAttribute="centerY" secondItem="aA0-5W-lgT" secondAttribute="centerY" id="FqH-51-gV1"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Reciever" id="ybL-9h-PQB"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="receiverLabel" destination="05R-w0-hdO" id="9Rb-Dw-9In"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cc-nO-7u4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="432"/>
+        </scene>
+        <!--Sender-->
+        <scene sceneID="d1i-Xk-Bb9">
+            <objects>
+                <viewController id="IjO-5R-c7T" customClass="SenderViewController" customModule="NotificationMiniProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ScY-51-lV2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mv8-JA-Lix"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A8Y-MY-yzM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iP-lb-xfZ">
+                                <rect key="frame" x="137" y="362" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendButtonTapped:" destination="IjO-5R-c7T" eventType="touchUpInside" id="dPE-L9-qqk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cfe-yS-LRG">
+                                <rect key="frame" x="148" y="269" width="25" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IjO-5R-c7T" id="cDs-bV-055"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0iP-lb-xfZ" firstAttribute="centerX" secondItem="A8Y-MY-yzM" secondAttribute="centerX" id="LWZ-NM-IWa"/>
+                            <constraint firstItem="0iP-lb-xfZ" firstAttribute="top" secondItem="Cfe-yS-LRG" secondAttribute="bottom" constant="63" id="MfK-4i-1nH"/>
+                            <constraint firstItem="Cfe-yS-LRG" firstAttribute="centerY" secondItem="A8Y-MY-yzM" secondAttribute="centerY" id="cOp-A3-GjE"/>
+                            <constraint firstItem="Cfe-yS-LRG" firstAttribute="centerX" secondItem="A8Y-MY-yzM" secondAttribute="centerX" id="ecB-K9-YsB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sender" id="CeY-oQ-m4Y"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textField" destination="Cfe-yS-LRG" id="a1s-Dt-30g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Nz-SE-BQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="-201"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LkU-ky-ej2">
+            <objects>
+                <tabBarController id="LEN-vc-2lp" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dtN-vj-92B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="IjO-5R-c7T" kind="relationship" relationship="viewControllers" id="FoW-f9-8Lw"/>
+                        <segue destination="HGT-UN-rTj" kind="relationship" relationship="viewControllers" id="b7Y-7a-amw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vX-6I-ytI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-481" y="62"/>
+        </scene>
+    </scenes>
+</document>

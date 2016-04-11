@@ -34,7 +34,12 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "toSecondVC" {
-            if let secondViewController = segue.destinationViewController as? SecondViewController 
+            if let text = firstTextField.text {
+                if let secondViewController = segue.destinationViewController as? SecondViewController {
+                    secondViewController.textFieldInfo = text
+                }
+                
+            }
             
             
         } else if segue.identifier == "toThirdVC" {

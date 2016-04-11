@@ -1,6 +1,6 @@
 //
-//  SecondViewController.swift
-//  PrepareForSegueStretch
+//  SenderViewController.swift
+//  NotificationMiniProject
 //
 //  Created by mac-admin on 4/11/16.
 //  Copyright © 2016 Vints. All rights reserved.
@@ -8,15 +8,12 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SenderViewController: UIViewController, UITextFieldDelegate {
 
-    var textFieldInfo: String?
-    
-    @IBOutlet weak var label: UILabel!
-    
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = textFieldInfo
+
         // Do any additional setup after loading the view.
     }
 
@@ -25,7 +22,15 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func sendButtonTapped(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName("sendButtonTapped", object: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 

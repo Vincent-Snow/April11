@@ -1,6 +1,6 @@
 //
-//  SecondViewController.swift
-//  PrepareForSegueStretch
+//  ReceiverViewController.swift
+//  NotificationMiniProject
 //
 //  Created by mac-admin on 4/11/16.
 //  Copyright © 2016 Vints. All rights reserved.
@@ -8,15 +8,13 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ReceiverViewController: UIViewController {
 
-    var textFieldInfo: String?
-    
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var receiverLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = textFieldInfo
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiverViewController.notificationReceieved), name: "sendButtonTapped", object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +23,9 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func notificationReceieved() {
+        receiverLabel.text = "SUck it"
+    }
 
     /*
     // MARK: - Navigation
