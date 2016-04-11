@@ -23,8 +23,8 @@ class SenderViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("sendButtonTapped", object: nil)
-    }
+        guard let text = textField.text else {return}
+        NSNotificationCenter.defaultCenter().postNotificationName("sendButtonTapped", object: nil, userInfo: ["text": text])    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()

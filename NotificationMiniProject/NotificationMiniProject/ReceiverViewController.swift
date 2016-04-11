@@ -14,7 +14,7 @@ class ReceiverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiverViewController.notificationReceieved), name: "sendButtonTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReceiverViewController.notificationReceieved(_:)), name: "sendButtonTapped", object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -23,8 +23,10 @@ class ReceiverViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func notificationReceieved() {
-        receiverLabel.text = "SUck it"
+    func notificationReceieved(notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+            text = userInfo["text"] as? String else {return}
+        receiverLabel.text = text
     }
 
     /*
